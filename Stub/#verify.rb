@@ -1,0 +1,3 @@
+def verify
+  true
+end

@@ -1,0 +1,3 @@
+def mochas
+  @@mochas ||= {}
+end

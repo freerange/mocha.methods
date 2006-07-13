@@ -1,0 +1,3 @@
+def expectations
+  @expectations ||= []
+end
