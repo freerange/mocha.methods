@@ -1,3 +1,3 @@
 def const_missing(symbol)
-  mochas[symbol] ||= MochaClass.dup
+  mochas[symbol] ||= Mocha::MockClass.dup
 end

@@ -1,3 +1,3 @@
 def mocha
-  @mocha ||= Mocha.new
+  @mocha ||= Mocha::Mock.new
 end
