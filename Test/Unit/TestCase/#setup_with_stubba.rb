@@ -1,3 +1,3 @@
 def setup_with_stubba
-  $stubba = Stubba.new
+  $stubba = Stubba::Stubba.new
 end

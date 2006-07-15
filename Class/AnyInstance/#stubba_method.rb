@@ -1,3 +1,3 @@
 def stubba_method
-  StubbaAnyInstanceMethod
+  Stubba::AnyInstanceMethod
 end
