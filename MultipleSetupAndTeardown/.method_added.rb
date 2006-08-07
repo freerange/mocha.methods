@@ -5,9 +5,9 @@ def self.method_added(method)
       alias_method :setup_added, :setup
       define_method(:setup) do
         begin
-          setup_added
-        ensure
           setup_new
+        ensure
+          setup_added
         end
       end
     end
