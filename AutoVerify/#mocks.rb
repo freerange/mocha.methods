@@ -1,0 +1,3 @@
+def mocks
+  @mocks ||= []
+end
