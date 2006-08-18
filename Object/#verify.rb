@@ -1,3 +1,3 @@
-def verify(*method_names)
-  mocha.verify(*method_names)
+def verify
+  mocha.verify
 end
