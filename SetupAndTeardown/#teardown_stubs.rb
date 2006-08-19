@@ -1,4 +1,10 @@
 def teardown_stubs
-  $stubba.unstub_all if $stubba
-  $stubba = nil
+  if $stubba then
+    begin
+      $stubba.verify_all { add_assertion }
+    ensure
+      $stubba.unstub_all
+      $stubba = nil
+    end
+  end
 end
