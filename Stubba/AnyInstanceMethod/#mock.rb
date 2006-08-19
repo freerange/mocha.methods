@@ -1,3 +1,3 @@
 def mock
-  object.any_instance.mocha
+  stubbee.any_instance.mocha
 end

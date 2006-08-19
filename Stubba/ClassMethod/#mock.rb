@@ -1,3 +1,3 @@
 def mock
-  object.mocha
+  stubbee.mocha
 end

@@ -1,3 +1,3 @@
 def to_s
-  "#{object}.#{method}"
+  "#{stubbee}.#{method}"
 end

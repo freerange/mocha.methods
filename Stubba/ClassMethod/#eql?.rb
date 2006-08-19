@@ -1,4 +1,4 @@
 def eql?(other)
   return false unless (other.class == self.class)
-  (object == other.object) and (method == other.method)
+  (stubbee == other.stubbee) and (method == other.method)
 end

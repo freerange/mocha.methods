@@ -1,3 +1,3 @@
-def initialize(object, method)
-  @object, @method = object, method
+def initialize(stubbee, method)
+  @stubbee, @method = stubbee, method
 end
