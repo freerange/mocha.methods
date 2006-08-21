@@ -1,4 +1,4 @@
-def expects(symbol)
-  expectations << Expectation.new(symbol)
+def expects(symbol, backtrace = nil)
+  expectations << Expectation.new(symbol, backtrace)
   expectations.last
 end

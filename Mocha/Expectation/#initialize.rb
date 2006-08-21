@@ -1,7 +1,7 @@
-def initialize(method_name)
+def initialize(method_name, backtrace = nil)
   @method_name = method_name
   @count = 1
   @parameters, @parameter_block = AlwaysEqual.new, nil
   @invoked, @return_value = 0, nil
-  @backtrace = caller
+  @backtrace = backtrace || caller
 end

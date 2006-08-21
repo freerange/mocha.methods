@@ -1,4 +1,4 @@
-def stubs(symbol)
-  expectations << Stub.new(symbol)
+def stubs(symbol, backtrace = nil)
+  expectations << Stub.new(symbol, backtrace)
   expectations.last
 end
