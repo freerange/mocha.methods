@@ -1,3 +1,3 @@
-def stub_everything
-  Mocha::Mock.new(stub_everything = true)
+def stub_everything(expectations = {})
+  build_mock_with_expectations(:stub_everything, expectations)
 end

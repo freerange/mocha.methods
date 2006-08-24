@@ -1,5 +1,7 @@
 def build_mock_with_expectations(expectation_type = :expects, expectations = {})
-  mock = Mocha::Mock.new
+  stub_everything = (expectation_type == :stub_everything)
+  expectation_type = :stubs if expectation_type == :stub_everything
+  mock = Mocha::Mock.new(stub_everything)
   expectations.each do |method, result|
     mock.send(expectation_type, method).returns(result)
   end
