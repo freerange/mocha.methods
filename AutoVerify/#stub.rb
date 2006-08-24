@@ -1,8 +1,3 @@
 def stub(expectations = {})
-  mock = Mocha::Mock.new
-  expectations.each do |method, result|
-    mock.stubs(method).returns(result)
-  end
-  mocks << mock
-  mock
+  build_mock_with_expectations(:stubs, expectations)
 end
