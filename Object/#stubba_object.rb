@@ -1,3 +1,3 @@
-def stubba_object
+def stubba_object # :nodoc:
   self
 end
