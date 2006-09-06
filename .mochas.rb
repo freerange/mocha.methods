@@ -1,3 +1,0 @@
-def mochas
-  @mochas ||= {}
-end
