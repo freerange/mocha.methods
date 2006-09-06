@@ -1,3 +1,3 @@
-def mocks
+def mocks # :nodoc:
   @mocks ||= []
 end
