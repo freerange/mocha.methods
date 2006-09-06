@@ -1,7 +1,7 @@
 def self.included(base)
 
   base.class_eval do
-
+  
     def self.method_added(symbol)
       # disable until later
     end
