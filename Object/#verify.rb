@@ -1,3 +1,3 @@
-def verify
+def verify # :nodoc:
   mocha.verify
 end

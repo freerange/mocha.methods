@@ -1,5 +1,4 @@
-def initialize(method_name, mock, expectations = [])
-  super(method_name)
-  @mock, @expectations = mock, expectations
+def initialize(mock, method_name)
+  super
   @invoked = true
 end
