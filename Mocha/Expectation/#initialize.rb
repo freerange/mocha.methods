@@ -4,4 +4,5 @@ def initialize(mock, method_name, backtrace = nil)
   @parameters, @parameter_block = AlwaysEqual.new, nil
   @invoked, @return_value = 0, nil
   @backtrace = backtrace || caller
+  @yield = nil
 end
