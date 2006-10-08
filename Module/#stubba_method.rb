@@ -1,3 +1,3 @@
 def stubba_method
-  Stubba::ClassMethod
+  Mocha::ClassMethod
 end
