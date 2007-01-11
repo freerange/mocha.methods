@@ -1,3 +1,3 @@
 def mocha_inspect
-  inspect =~ /#</ ? "#<#{self.class}:0x#{self.object_id.to_s(16)}>" : inspect
+  inspect =~ /#</ ? "#<#{self.class}:0x#{self.__id__.to_s(16)}>" : inspect
 end
