@@ -1,3 +1,5 @@
 def mocha_inspect
-  inspect =~ /#</ ? "#<#{self.class}:0x#{self.__id__.to_s(16)}>" : inspect
+  address = self.__id__ * 2
+  address += 0x100000000 if address < 0
+  inspect =~ /#</ ? "#<#{self.class}:0x#{'%x' % address}>" : inspect
 end
