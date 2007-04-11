@@ -1,4 +1,4 @@
 def initialize(mock, method_name)
   super
-  @invoked = true
+  @invoked_count = true
 end

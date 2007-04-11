@@ -1,7 +1,7 @@
 def verify
   yield(self) if block_given?
-  unless (@count === @invoked) then
-    error = ExpectationError.new(error_message(@count, @invoked))
+  unless (@expected_count === @invoked_count) then
+    error = ExpectationError.new(error_message(@expected_count, @invoked_count))
     error.set_backtrace(filtered_backtrace)
     raise error
   end

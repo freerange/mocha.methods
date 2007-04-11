@@ -1,4 +1,4 @@
 def times(range)
-  @count = range
+  @expected_count = range
   self
 end

@@ -4,5 +4,5 @@ def verify
   msg << "\nSimilar expectations:\n#{similar_expectations_list}" unless similar_expectations.empty?
   error = ExpectationError.new(msg)
   error.set_backtrace(filtered_backtrace)
-  raise error if @invoked
+  raise error if @invoked_count
 end
