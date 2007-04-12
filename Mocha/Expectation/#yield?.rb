@@ -1,3 +1,0 @@
-def yield?
-  @yield
-end

@@ -1,5 +1,5 @@
 def yields(*parameters)
   @yield = true
-  @parameters_to_yield = parameters
+  @yield_parameters = parameters
   self
 end
