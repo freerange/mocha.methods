@@ -1,4 +1,4 @@
 def returns(*values)
-  @return_value = (values.size > 1) ? lambda { values.shift } : @return_value = values.first
+  @return_values += ReturnValues.build(*values)
   self
 end

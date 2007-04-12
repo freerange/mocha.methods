@@ -1,8 +1,9 @@
-def expects(method_names, backtrace = nil)
-  method_names = method_names.is_a?(Hash) ? method_names : { method_names => nil }
-  method_names.each do |method_name, return_value|
-    expectations << Expectation.new(self, method_name, backtrace).returns(return_value)
-    self.__metaclass__.send(:undef_method, method_name) if self.__metaclass__.method_defined?(method_name)
+def expects(method_name_or_hash, backtrace = nil)
+  if method_name_or_hash.is_a?(Hash) then
+    method_name_or_hash.each do |method_name, return_value|
+      add_expectation(Expectation.new(self, method_name, backtrace).returns(return_value))
+    end
+  else
+    add_expectation(Expectation.new(self, method_name_or_hash, backtrace))
   end
-  expectations.last
 end

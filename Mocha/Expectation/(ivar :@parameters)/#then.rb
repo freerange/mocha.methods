@@ -1,0 +1,3 @@
+def then
+  self
+end
