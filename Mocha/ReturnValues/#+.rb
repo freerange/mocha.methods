@@ -1,3 +1,3 @@
 def +(other)
-  ReturnValues.new(*(@values + other.values))
+  self.class.new(*(@values + other.values))
 end
