@@ -1,3 +1,3 @@
 def add(*parameters)
-  @parameter_groups << SingleYieldParameterGroup.new(*parameters)
+  @parameter_groups << SingleYield.new(*parameters)
 end
