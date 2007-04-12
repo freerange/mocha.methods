@@ -1,5 +1,8 @@
 def invoke
   @invoked_count += 1
-  yield(*@yield_parameters) if @yield_parameters and block_given?
+  if block_given? then
+    next_yield_parameters = @yield_parameters.next
+    yield(*next_yield_parameters) if next_yield_parameters
+  end
   @return_values.next
 end
