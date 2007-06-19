@@ -3,7 +3,9 @@
       raise NoMethodError, "undefined method `#{symbol}' for #{self.mocha_inspect} which responds like #{@responder.mocha_inspect}"
     end
     matching_expectation = matching_expectation(symbol, *arguments)
+    raise ExpectationSequenceError if final_expectation_called?
     if matching_expectation then
+      @final_expectation_called = matching_expectation.final?
       matching_expectation.invoke(&block)
     elsif stub_everything then
       return
