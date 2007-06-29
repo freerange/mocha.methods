@@ -10,10 +10,6 @@
     elsif stub_everything then
       return
     else
-      begin
-        super_method_missing(symbol, *arguments, &block)
-  		rescue NoMethodError
-  			unexpected_method_called(symbol, *arguments)
-  		end
+      unexpected_method_called(symbol, *arguments)
 		end
 	end
