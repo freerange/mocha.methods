@@ -1,3 +1,3 @@
 def verify(&block)
-  @expectations.each { |expectation| expectation.verify(&block) }
+  @expectations.verify(&block)
 end
