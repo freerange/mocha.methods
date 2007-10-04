@@ -1,8 +1,8 @@
 def initialize(mock, method_name, backtrace = nil)
   @mock, @method_name = mock, method_name
-  @expected_count = 1
   @parameters = AnyParameters.new
-  @invoked_count, @return_values = 0, ReturnValues.new
-  @backtrace = backtrace || caller
+  @expected_count, @invoked_count = 1, 0
+  @return_values = ReturnValues.new
   @yield_parameters = YieldParameters.new
+  @backtrace = backtrace || caller
 end
