@@ -1,3 +1,6 @@
 def to_s
-  "(#{PrettyParameters.new(@parameters).pretty})"
+  text = @parameters.mocha_inspect
+  text = text.gsub(/^\[|\]$/, '')
+  text = text.gsub(/^\{|\}$/, '') if @parameters.length == 1
+  "(#{text})"
 end
