@@ -1,4 +1,4 @@
 def with(*arguments, &block)
-  @parameters = Parameters.new(arguments, &block)
+  @method_signature.modify(arguments, &block)
   self
 end

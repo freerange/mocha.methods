@@ -1,3 +1,3 @@
 def method_signature
-  "#{@method_name}#{@parameters}"
+  "#{@method_signature}"
 end
