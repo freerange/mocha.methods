@@ -1,4 +1,4 @@
-def with(*arguments, &parameter_block)
-  @parameters, @parameter_block = Parameters.new(arguments), parameter_block
+def with(*arguments, &block)
+  @parameters = Parameters.new(arguments, &block)
   self
 end
