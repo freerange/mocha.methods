@@ -1,5 +1,4 @@
 def with(*arguments, &parameter_block)
-  @parameters, @parameter_block = arguments, parameter_block
-  class << @parameters; def to_s; join(', '); end; end
+  @parameters, @parameter_block = Parameters.new(arguments), parameter_block
   self
 end
