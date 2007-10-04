@@ -1,3 +1,3 @@
 def ==(parameters)
-  @parameters == parameters
+  (@parameters == parameters)
 end

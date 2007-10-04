@@ -1,0 +1,3 @@
+def ==(parameters)
+  true
+end
