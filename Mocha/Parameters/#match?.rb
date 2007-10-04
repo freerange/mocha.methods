@@ -1,3 +1,3 @@
 def match?(parameters)
-  (@block && @block.call(*parameters)) || (@parameters == parameters)
+  @parameters.nil? || (@block && @block.call(*parameters)) || (@parameters == parameters)
 end

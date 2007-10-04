@@ -1,3 +1,3 @@
-def initialize(parameters, &block)
+def initialize(parameters = nil, &block)
   @parameters, @block = parameters, block
 end
