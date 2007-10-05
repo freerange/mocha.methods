@@ -1,3 +1,3 @@
-def initialize(method_name, parameters = nil, &block)
-  @method_name, @parameters, @block = method_name, parameters, block
+def initialize(mock, method_name, parameters = nil, &block)
+  @mock, @method_name, @parameters, @block = mock, method_name, parameters, block
 end
