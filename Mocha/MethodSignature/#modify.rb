@@ -1,3 +1,3 @@
-def modify(parameters = nil, &block)
-  @parameters, @block = parameters, block
+def modify(parameters = nil, &matching_block)
+  @parameters, @matching_block = parameters, matching_block
 end
