@@ -1,6 +1,6 @@
-def initialize(stub_everything = false, name = nil)
-  @stub_everything = stub_everything
+def initialize(name = nil)
   @mock_name = name
   @expectations = ExpectationList.new
+  @everything_stubbed = false
   @responder = nil
 end
