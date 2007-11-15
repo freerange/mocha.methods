@@ -1,6 +1,7 @@
-def stub_everything(*args)
-  name, expectations = name_and_expectations_from_args(args)
-  stub = Mock.new(name)
+def stub_everything(*arguments, &block)
+  name = arguments.shift if arguments.first.is_a?(String)
+  expectations = arguments.shift || {}
+  stub = Mock.new(name, &block)
   stub.stub_everything
   stub.stubs(expectations)
   mocks << stub
