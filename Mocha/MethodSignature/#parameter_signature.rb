@@ -1,7 +1,6 @@
 def parameter_signature
-  return "" unless @parameters
-  signature = @parameters.mocha_inspect
+  signature = matchers.mocha_inspect
   signature = signature.gsub(/^\[|\]$/, '')
-  signature = signature.gsub(/^\{|\}$/, '') if @parameters.length == 1
+  signature = signature.gsub(/^\{|\}$/, '') if matchers.length == 1
   "(#{signature})"
 end
