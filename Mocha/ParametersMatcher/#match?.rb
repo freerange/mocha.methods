@@ -1,5 +1,4 @@
-def match?(actual_method_name, actual_parameters = [])
-  return false unless (@method_name == actual_method_name)
+def match?(actual_parameters = [])
   if @matching_block
     return @matching_block.call(*actual_parameters)
   else
