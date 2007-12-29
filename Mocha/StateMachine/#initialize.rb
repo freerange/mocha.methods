@@ -1,4 +1,4 @@
-def initialize(name)
+def initialize(name) # :nodoc:
   @name = name
   @current_state = nil
 end
