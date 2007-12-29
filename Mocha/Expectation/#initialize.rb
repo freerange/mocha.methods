@@ -3,6 +3,7 @@ def initialize(mock, expected_method_name, backtrace = nil)
   @method_matcher = MethodMatcher.new(expected_method_name)
   @parameters_matcher = ParametersMatcher.new
   @ordering_constraints = []
+  @side_effects = []
   @expected_count, @invoked_count = 1, 0
   @return_values = ReturnValues.new
   @yield_parameters = YieldParameters.new
