@@ -1,3 +1,3 @@
-def sequence(name) # :nodoc:
+def sequence(name)
   Sequence.new(name)
 end
