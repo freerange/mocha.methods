@@ -1,4 +1,4 @@
 def never
-  times(0)
+  @cardinality = Cardinality.exactly(0)
   self
 end

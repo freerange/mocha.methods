@@ -1,4 +1,4 @@
 def times(range)
-  @expected_count = range
+  @cardinality = Cardinality.times(range)
   self
 end

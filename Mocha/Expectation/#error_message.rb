@@ -1,3 +1,3 @@
-def error_message(expected_count, actual_count)
-  "#{method_signature} - expected calls: #{expected_count.mocha_inspect}, actual calls: #{actual_count}"
+def error_message(cardinality, invocation_count)
+  "#{method_signature} - expected calls: #{cardinality.mocha_inspect}, actual calls: #{invocation_count}"
 end

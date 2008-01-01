@@ -1,5 +1,5 @@
 def invoke
-  @invoked_count += 1
+  @invocation_count += 1
   perform_side_effects()
   if block_given? then
     @yield_parameters.next_invocation.each do |yield_parameters|
