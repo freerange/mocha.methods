@@ -1,5 +1,5 @@
-def initialize(name = nil, &block)
-  @mock_name = name
+def initialize(reference = nil, &block)
+  @reference = reference
   @expectations = ExpectationList.new
   @everything_stubbed = false
   @responder = nil
