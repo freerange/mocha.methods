@@ -1,5 +1,5 @@
-def initialize(reference = nil, &block)
-  @reference = reference
+def initialize(name = nil, &block)
+  @name = name || DefaultName.new(self)
   @expectations = ExpectationList.new
   @everything_stubbed = false
   @responder = nil

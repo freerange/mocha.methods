@@ -1,3 +1,3 @@
 def mocha_inspect
-  @name.mocha_inspect
+  "#<Mock:#{@name}>"
 end
