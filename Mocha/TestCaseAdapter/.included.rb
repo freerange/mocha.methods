@@ -4,6 +4,7 @@ def self.included(base)
     alias_method :run_before_mocha_test_case_adapter, :run
 
     def run(result)
+      assertion_counter = AssertionCounter.new(result)
       yield(Test::Unit::TestCase::STARTED, name)
       @_result = result
       begin
@@ -11,7 +12,7 @@ def self.included(base)
         begin
           setup
           __send__(@method_name)
-          mocha_verify { add_assertion }
+          mocha_verify(assertion_counter)
         rescue Mocha::ExpectationError => e
           add_failure(e.message, e.backtrace)
         rescue Test::Unit::AssertionFailedError => e

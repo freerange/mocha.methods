@@ -1,3 +1,3 @@
-def verify(&block)
-  @expectations.verify(&block)
+def verify(assertion_counter = nil)
+  @expectations.verify(assertion_counter)
 end
