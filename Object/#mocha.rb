@@ -1,3 +1,3 @@
 def mocha # :nodoc:
-  @mocha ||= Mocha::Mock.new(Mocha::Mock.impersonating(self))
+  @mocha ||= Mocha::Mock.impersonating(self)
 end
