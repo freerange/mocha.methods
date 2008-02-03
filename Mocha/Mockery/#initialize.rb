@@ -1,3 +1,4 @@
-def setup_stubs
+def initialize
+  @mocks = []
   $stubba = Mocha::Central.new
 end

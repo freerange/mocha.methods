@@ -1,3 +1,3 @@
-def mocha_setup
-  setup_stubs
+def mocha_setup # :nodoc:
+  @mockery = Mockery.new
 end

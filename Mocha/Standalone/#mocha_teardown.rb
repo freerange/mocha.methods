@@ -1,7 +1,3 @@
-def mocha_teardown
-  begin
-    teardown_mocks
-  ensure
-    teardown_stubs
-  end
+def mocha_teardown # :nodoc:
+  @mockery.teardown
 end

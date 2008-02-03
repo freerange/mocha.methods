@@ -1,4 +1,4 @@
-def teardown_stubs
+def teardown
   if $stubba then
     $stubba.unstub_all
     $stubba = nil
