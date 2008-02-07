@@ -1,4 +1,3 @@
 def initialize
-  @mocks = []
-  $stubba = Mocha::Central.new
+  reset
 end

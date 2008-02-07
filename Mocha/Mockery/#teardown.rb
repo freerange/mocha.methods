@@ -1,6 +1,4 @@
 def teardown
-  if $stubba then
-    $stubba.unstub_all
-    $stubba = nil
-  end
+  @stubba.unstub_all
+  reset
 end

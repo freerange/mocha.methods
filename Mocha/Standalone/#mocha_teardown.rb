@@ -1,3 +1,4 @@
 def mocha_teardown # :nodoc:
-  @mockery.teardown
+  Mockery.instance.teardown
+  Mockery.reset_instance
 end
