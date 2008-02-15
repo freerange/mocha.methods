@@ -1,3 +1,3 @@
 def needs_verifying?
-  self != self.class.at_least(0)
+  !allowed_any_number_of_times?
 end

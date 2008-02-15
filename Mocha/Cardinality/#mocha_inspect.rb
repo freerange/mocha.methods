@@ -1,5 +1,5 @@
 def mocha_inspect
-  if required == 0 && infinite?(maximum)
+  if allowed_any_number_of_times?
     "allowed any number of times"
   else
     if required == 0 && maximum == 0
