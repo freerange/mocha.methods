@@ -1,3 +1,4 @@
 def reset
-  @stubba = Central.new
+  @mocks = nil
+  @stubba = nil
 end

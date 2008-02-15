@@ -1,5 +1,4 @@
 def teardown
-  @stubba.unstub_all
-  @mocks = nil
+  stubba.unstub_all
   reset
 end
