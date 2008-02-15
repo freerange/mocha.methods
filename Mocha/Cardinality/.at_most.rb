@@ -1,3 +1,3 @@
 def at_most(count)
-  new(-INFINITE, count)
+  new(0, count)
 end
