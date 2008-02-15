@@ -1,3 +1,3 @@
 def unnamed_mock(&block)
-  add_mock(Mock.unnamed(&block))
+  add_mock(Mock.new(&block))
 end
