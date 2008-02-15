@@ -1,4 +1,5 @@
 def reset
-  @mocks = nil
   @stubba = nil
+  @mocks = nil
+  @state_machines = nil
 end
