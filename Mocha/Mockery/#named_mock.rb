@@ -1,5 +1,3 @@
 def named_mock(name, &block)
-  mock = Mock.named(name, &block)
-  @mocks << mock
-  mock
+  add_mock(Mock.named(name, &block))
 end
