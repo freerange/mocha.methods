@@ -1,3 +1,9 @@
 def restore_original_method
-  stubbee.__metaclass__.class_eval("alias_method :#{method}, :#{hidden_method}; remove_method :#{hidden_method}", __FILE__, __LINE__) if stubbee.__metaclass__.method_defined?(hidden_method)
+  if method_exists?(hidden_method)
+    begin
+      stubbee.__metaclass__.class_eval("alias_method :#{method}, :#{hidden_method}; remove_method :#{hidden_method}", __FILE__, __LINE__)
+    rescue NameError
+      # deal with nasties like ActiveRecord::Associations::AssociationProxy
+    end
+  end
 end
