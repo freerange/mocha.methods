@@ -8,4 +8,7 @@ def verify(assertion_counter = nil)
     end
     raise ExpectationError.new(message, backtrace)
   end
+  expectations.each do |e|
+    on_stubbing_method_unnecessarily(e) unless e.used?
+  end
 end
