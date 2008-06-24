@@ -1,3 +1,3 @@
-def is(state) # :nodoc:
+def is(state)
   State.new(self, state)
 end
