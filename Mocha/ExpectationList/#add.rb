@@ -1,4 +1,4 @@
 def add(expectation)
-  @expectations << expectation
+  @expectations.unshift(expectation)
   expectation
 end
