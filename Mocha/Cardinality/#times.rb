@@ -1,3 +1,8 @@
 def times(number)
-  number == 1 ? "once" : "#{number} times"
+  case number
+    when 0: "no times"
+    when 1: "once"
+    when 2: "twice"
+    else "#{number} times"
+  end
 end
