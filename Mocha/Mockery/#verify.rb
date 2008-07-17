@@ -9,6 +9,10 @@ def verify(assertion_counter = nil)
     raise ExpectationError.new(message, backtrace)
   end
   expectations.each do |e|
-    on_stubbing_method_unnecessarily(e) unless e.used?
+    unless Mocha::Configuration.allow?(:stubbing_method_unnecessarily)
+      unless e.used?
+        on_stubbing_method_unnecessarily(e)
+      end
+    end
   end
 end
