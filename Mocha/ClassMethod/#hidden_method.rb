@@ -4,5 +4,5 @@ def hidden_method
   else
     method_name = method.to_s.gsub(/\W/) { |s| "_substituted_character_#{s.ord}_" }
   end
-  "__stubba__#{method_name}__stubba__"
+  "__stubba__#{method_name}__stubba__".to_sym
 end  
