@@ -1,5 +1,5 @@
 def run runner
-  assertion_counter = AssertionCounter.new(runner)
+  assertion_counter = AssertionCounter.new(self)
   result = '.'
   begin
     begin

@@ -1,3 +1,3 @@
 def increment
-  @runner.assertion_count += 1
+  @test_case._assertions += 1
 end

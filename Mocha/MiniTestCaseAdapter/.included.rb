@@ -4,7 +4,7 @@ def self.included(base)
     alias_method :run_before_mocha_mini_test_adapter, :run
 
     def run runner
-      assertion_counter = AssertionCounter.new(runner)
+      assertion_counter = AssertionCounter.new(self)
       result = '.'
       begin
         begin
