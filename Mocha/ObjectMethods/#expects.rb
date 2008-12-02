@@ -1,7 +1,14 @@
-def expects(symbol)
+def expects(method_name_or_hash)
+  expectation = nil
   mockery = Mocha::Mockery.instance
-  mockery.on_stubbing(self, symbol)
-  method = stubba_method.new(stubba_object, symbol)
-  mockery.stubba.stub(method)
-  mocha.expects(symbol, caller)
+  iterator = ArgumentIterator.new(method_name_or_hash)
+  iterator.each { |*args|
+    method_name = args.shift
+    mockery.on_stubbing(self, method_name)
+    method = stubba_method.new(stubba_object, method_name)
+    mockery.stubba.stub(method)
+    expectation = mocha.expects(method_name, caller)
+    expectation.returns(args.shift) if args.length > 0
+  }
+  expectation
 end

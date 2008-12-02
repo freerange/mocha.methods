@@ -1,11 +1,10 @@
 def expects(method_name_or_hash, backtrace = nil)
-  if method_name_or_hash.is_a?(Hash) then
-    method_name_or_hash.each do |method_name, return_value|
-      ensure_method_not_already_defined(method_name)
-      @expectations.add(Expectation.new(self, method_name, backtrace).returns(return_value))
-    end
-  else
-    ensure_method_not_already_defined(method_name_or_hash)
-    @expectations.add(Expectation.new(self, method_name_or_hash, backtrace))
-  end
+  iterator = ArgumentIterator.new(method_name_or_hash)
+  iterator.each { |*args|
+    method_name = args.shift
+    ensure_method_not_already_defined(method_name)
+    expectation = Expectation.new(self, method_name, backtrace)
+    expectation.returns(args.shift) if args.length > 0
+    @expectations.add(expectation)
+  }
 end
