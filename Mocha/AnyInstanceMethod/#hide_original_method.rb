@@ -1,7 +1,7 @@
 def hide_original_method
   if method_exists?(method)
     begin
-      stubbee.class_eval("alias_method :#{hidden_method}, :#{method}", __FILE__, __LINE__)
+      stubbee.send(:alias_method, hidden_method, method)
     rescue NameError
       # deal with nasties like ActiveRecord::Associations::AssociationProxy
     end
