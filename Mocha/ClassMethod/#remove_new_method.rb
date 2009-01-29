@@ -1,3 +1,3 @@
 def remove_new_method
-  stubbee.__metaclass__.class_eval("remove_method :#{method}", __FILE__, __LINE__)
+  stubbee.__metaclass__.send(:remove_method, method)
 end
