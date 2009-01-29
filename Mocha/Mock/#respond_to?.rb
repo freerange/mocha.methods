@@ -6,6 +6,6 @@ def respond_to?(symbol, include_private = false)
       @responder.respond_to?(symbol)
     end
   else
-    @expectations.matches_method?(symbol)
+    @everything_stubbed || @expectations.matches_method?(symbol)
   end
 end
