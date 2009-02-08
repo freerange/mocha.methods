@@ -1,5 +1,5 @@
 def run(result)
-  assertion_counter = Mocha::TestUnit::AssertionCounter.new(result)
+  assertion_counter = AssertionCounter.new(result)
   yield(Test::Unit::TestCase::STARTED, name)
   @_result = result
   begin

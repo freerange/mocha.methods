@@ -1,12 +1,12 @@
 def run(result)
-  assertion_counter = Mocha::TestUnit::AssertionCounter.new(result)
+  assertion_counter = AssertionCounter.new(result)
   begin
     @_result = result
     yield(Test::Unit::TestCase::STARTED, name)
     begin
       begin
         run_setup
-        run_test
+        __send__(@method_name)
         mocha_verify(assertion_counter)
       rescue Mocha::ExpectationError => e
         add_failure(e.message, e.backtrace)
