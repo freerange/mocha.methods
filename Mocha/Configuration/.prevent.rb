@@ -1,3 +1,3 @@
-def prevent(action)
-  configuration[action] = :prevent
+def prevent(action, &block)
+  change_config action, :prevent, &block
 end

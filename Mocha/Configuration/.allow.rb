@@ -1,3 +1,3 @@
-def allow(action)
-  configuration[action] = :allow
+def allow(action, &block)
+  change_config action, :allow, &block
 end
