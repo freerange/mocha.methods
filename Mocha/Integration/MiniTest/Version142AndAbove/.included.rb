@@ -1,3 +1,3 @@
 def self.included(mod)
-  warn "Monkey patching MiniTest >= v1.4.2" if $options['debug']
+  $stderr.puts "Monkey patching MiniTest >= v1.4.2" if $options['debug']
 end
