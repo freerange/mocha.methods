@@ -1,3 +1,3 @@
 def initialize(lib_directory = LIB_DIRECTORY)
-  @lib_directory = lib_directory
+  @path_pattern = Regexp.new(lib_directory)
 end
