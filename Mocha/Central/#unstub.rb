@@ -1,6 +1,6 @@
 def unstub(method)
-  if stubba_methods.include?(method)
-    method.unstub
-    stubba_methods.delete(method)
+  if existing = stubba_methods.detect { |m| m.matches?(method) }
+    existing.unstub
+    stubba_methods.delete(existing)
   end
 end
