@@ -1,3 +1,5 @@
 def hide_original_method
-  # intentionally left blank
+  if stubbee.singleton_methods(false).include?(method)
+    super
+  end
 end
