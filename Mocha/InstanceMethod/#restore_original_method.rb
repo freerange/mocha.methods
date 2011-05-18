@@ -1,5 +1,3 @@
 def restore_original_method
-  if stubbee.singleton_methods(false).include?(hidden_method)
-    super
-  end
+  super if singleton_method?(hidden_method)
 end
