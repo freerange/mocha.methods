@@ -6,4 +6,4 @@ def hidden_method
   end
   hidden_method = "__stubba__#{method_name}__stubba__"
   RUBY_VERSION < '1.9' ? hidden_method.to_s : hidden_method.to_sym
-end  
+end
