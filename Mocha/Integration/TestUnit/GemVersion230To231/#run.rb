@@ -1,6 +1,7 @@
 def run(result)
   assertion_counter = AssertionCounter.new(result)
   begin
+    @internal_data.test_started
     @_result = result
     yield(Test::Unit::TestCase::STARTED, name)
     yield(Test::Unit::TestCase::STARTED_OBJECT, name)
@@ -8,12 +9,13 @@ def run(result)
       begin
         run_setup
         run_test
+        run_cleanup
         mocha_verify(assertion_counter)
         add_pass
       rescue Mocha::ExpectationError => e
         add_failure(e.message, e.backtrace)
       rescue Exception
-        @interrupted = true
+        @internal_data.interrupted
         raise unless handle_exception($!)
       ensure
         begin
@@ -25,6 +27,7 @@ def run(result)
     ensure
       mocha_teardown
     end
+    @internal_data.test_finished
     result.add_run
     yield(Test::Unit::TestCase::FINISHED, name)
     yield(Test::Unit::TestCase::FINISHED_OBJECT, name)
