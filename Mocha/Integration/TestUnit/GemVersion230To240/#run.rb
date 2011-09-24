@@ -4,7 +4,7 @@ def run(result)
     @internal_data.test_started
     @_result = result
     yield(Test::Unit::TestCase::STARTED, name)
-    yield(Test::Unit::TestCase::STARTED_OBJECT, name)
+    yield(Test::Unit::TestCase::STARTED_OBJECT, self)
     begin
       begin
         run_setup
@@ -30,7 +30,7 @@ def run(result)
     @internal_data.test_finished
     result.add_run
     yield(Test::Unit::TestCase::FINISHED, name)
-    yield(Test::Unit::TestCase::FINISHED_OBJECT, name)
+    yield(Test::Unit::TestCase::FINISHED_OBJECT, self)
   ensure
     # @_result = nil # For test-spec's after_all :<
   end
