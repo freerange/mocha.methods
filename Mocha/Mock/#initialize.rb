@@ -1,4 +1,5 @@
-def initialize(name = nil, &block)
+def initialize(mockery, name = nil, &block)
+  @mockery = mockery
   @name = name || DefaultName.new(self)
   @expectations = ExpectationList.new
   @everything_stubbed = false
