@@ -1,3 +1,3 @@
 def expectations
-  mocks.map { |mock| mock.expectations.to_a }.flatten
+  mocks.map { |mock| mock.__expectations__.to_a }.flatten
 end
