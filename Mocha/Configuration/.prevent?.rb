@@ -1,3 +1,3 @@
-def prevent?(action) # :nodoc:
+def prevent?(action)
   configuration[action] == :prevent
 end

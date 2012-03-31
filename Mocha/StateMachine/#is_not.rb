@@ -1,3 +1,3 @@
-def is_not(state)
-  StatePredicate.new(self, state)
+def is_not(state_name)
+  StatePredicate.new(self, state_name)
 end

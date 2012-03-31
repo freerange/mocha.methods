@@ -1,3 +1,3 @@
-def is(state)
-  State.new(self, state)
+def is(state_name)
+  State.new(self, state_name)
 end

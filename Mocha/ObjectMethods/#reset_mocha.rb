@@ -1,3 +1,3 @@
-def reset_mocha # :nodoc:
+def reset_mocha
   @mocha = nil
 end

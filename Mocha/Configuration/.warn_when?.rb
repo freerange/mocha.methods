@@ -1,3 +1,3 @@
-def warn_when?(action) # :nodoc:
+def warn_when?(action)
   configuration[action] == :warn
 end

@@ -1,3 +1,3 @@
-def stubba_method # :nodoc:
+def stubba_method
   Mocha::ClassMethod
 end

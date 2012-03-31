@@ -1,4 +1,4 @@
-def responds_like(object)
-  @responder = object
+def responds_like(responder)
+  @responder = responder
   self
 end

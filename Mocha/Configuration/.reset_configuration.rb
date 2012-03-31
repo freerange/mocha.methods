@@ -1,3 +1,3 @@
-def reset_configuration # :nodoc:
+def reset_configuration
   @configuration = nil
 end

@@ -1,3 +1,3 @@
-def configuration # :nodoc:
+def configuration
   @configuration ||= DEFAULTS.dup
 end

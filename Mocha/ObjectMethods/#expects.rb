@@ -1,10 +1,10 @@
-def expects(method_name_or_hash)
-  if method_name_or_hash.to_s =~ /the[^a-z]*spanish[^a-z]*inquisition/i
+def expects(expected_methods_vs_return_values)
+  if expected_methods_vs_return_values.to_s =~ /the[^a-z]*spanish[^a-z]*inquisition/i
     raise Mocha::ExpectationError.new('NOBODY EXPECTS THE SPANISH INQUISITION!')
   end
   expectation = nil
   mockery = Mocha::Mockery.instance
-  iterator = ArgumentIterator.new(method_name_or_hash)
+  iterator = ArgumentIterator.new(expected_methods_vs_return_values)
   iterator.each { |*args|
     method_name = args.shift
     mockery.on_stubbing(self, method_name)

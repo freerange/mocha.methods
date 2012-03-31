@@ -1,7 +1,7 @@
-def stubs(method_name_or_hash)
+def stubs(stubbed_methods_vs_return_values)
   expectation = nil
   mockery = Mocha::Mockery.instance
-  iterator = ArgumentIterator.new(method_name_or_hash)
+  iterator = ArgumentIterator.new(stubbed_methods_vs_return_values)
   iterator.each { |*args|
     method_name = args.shift
     mockery.on_stubbing(self, method_name)

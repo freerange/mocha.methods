@@ -1,4 +1,4 @@
-def change_config(action, new_value, &block) # :nodoc:
+def change_config(action, new_value, &block)
   if block_given?
     temporarily_change_config action, new_value, &block
   else

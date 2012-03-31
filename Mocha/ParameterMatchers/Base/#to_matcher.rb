@@ -1,3 +1,3 @@
-def to_matcher # :nodoc:
+def to_matcher
   self
 end

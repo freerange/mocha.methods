@@ -1,2 +1,2 @@
-def mocha_setup # :nodoc:
+def mocha_setup
 end

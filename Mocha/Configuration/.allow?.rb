@@ -1,3 +1,3 @@
-def allow?(action) # :nodoc:
+def allow?(action)
   configuration[action] == :allow
 end
