@@ -1,4 +1,7 @@
 def stubs(stubbed_methods_vs_return_values)
+  if frozen?
+    raise StubbingError.new("can't stub method on frozen object: #{mocha_inspect}", caller)
+  end
   expectation = nil
   mockery = Mocha::Mockery.instance
   iterator = ArgumentIterator.new(stubbed_methods_vs_return_values)
