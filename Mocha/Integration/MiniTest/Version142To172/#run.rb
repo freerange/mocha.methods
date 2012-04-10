@@ -4,7 +4,7 @@ def run runner
       (Time.now - runner.start_time)]
     runner.status $stderr
   end if ::MiniTest::Unit::TestCase::SUPPORTS_INFO_SIGNAL
-  
+
   assertion_counter = AssertionCounter.new(self)
   result = '.'
   begin

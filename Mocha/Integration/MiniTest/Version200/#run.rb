@@ -4,7 +4,7 @@ def run runner
     warn "%s#%s %.2fs" % [self.class, self.__name__, time]
     runner.status $stderr
   end if ::MiniTest::Unit::TestCase::SUPPORTS_INFO_SIGNAL
-  
+
   assertion_counter = AssertionCounter.new(self)
   result = ""
   begin
