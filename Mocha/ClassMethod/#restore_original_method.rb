@@ -1,10 +1,6 @@
 def restore_original_method
-  if method_exists?(hidden_method)
-    begin
-      stubbee.__metaclass__.send(:alias_method, method, hidden_method)
-      stubbee.__metaclass__.send(:remove_method, hidden_method)
-    rescue NameError
-      # deal with nasties like ActiveRecord::Associations::AssociationProxy
-    end
+  if @original_method && @original_method.owner == stubbee.__metaclass__
+    stubbee.__metaclass__.send(:define_method, method, @original_method.to_proc)
+    stubbee.__metaclass__.send(@original_visibility, method)
   end
 end
