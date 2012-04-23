@@ -1,7 +1,7 @@
 def hide_original_method
   if method_exists?(method)
     begin
-      @original_method = stubbee.method(method)
+      @original_method = stubbee._method(method)
       if @original_method && @original_method.owner == stubbee.__metaclass__
         @original_visibility = :public
         if stubbee.__metaclass__.protected_instance_methods.include?(method)
