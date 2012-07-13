@@ -3,7 +3,7 @@ def run(gemfile)
   ENV["MOCHA_OPTIONS"] = "debug"
   reset_bundle
   execute(
-    "bundle install --gemfile=#{gemfile}",
-    "bundle exec rake test"
+    with_rbenv("bundle install --gemfile=#{gemfile}"),
+    with_rbenv("bundle exec rake test")
   )
 end
