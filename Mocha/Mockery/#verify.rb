@@ -6,7 +6,7 @@ def verify(assertion_counter = nil)
     else
       backtrace = unsatisfied_expectations[0].backtrace
     end
-    raise ExpectationError.new(message, backtrace)
+    raise ExpectationErrorFactory.build(message, backtrace)
   end
   expectations.each do |e|
     unless Mocha::Configuration.allow?(:stubbing_method_unnecessarily)

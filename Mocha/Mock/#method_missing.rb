@@ -9,7 +9,7 @@ def method_missing(symbol, *arguments, &block)
       matching_expectation.invoke(&block) if matching_expectation
       message = UnexpectedInvocation.new(self, symbol, *arguments).to_s
       message << @mockery.mocha_inspect
-      raise ExpectationError.new(message, caller)
+      raise ExpectationErrorFactory.build(message, caller)
     end
   end
 end

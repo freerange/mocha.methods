@@ -1,6 +1,6 @@
 def expects(expected_methods_vs_return_values)
   if expected_methods_vs_return_values.to_s =~ /the[^a-z]*spanish[^a-z]*inquisition/i
-    raise Mocha::ExpectationError.new('NOBODY EXPECTS THE SPANISH INQUISITION!')
+    raise ExpectationErrorFactory.build('NOBODY EXPECTS THE SPANISH INQUISITION!')
   end
   if frozen?
     raise StubbingError.new("can't stub method on frozen object: #{mocha_inspect}", caller)
