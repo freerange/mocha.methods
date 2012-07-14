@@ -1,3 +1,3 @@
 def increment
-  @test_case._assertions += 1
+  @test_case.assert(true)
 end
