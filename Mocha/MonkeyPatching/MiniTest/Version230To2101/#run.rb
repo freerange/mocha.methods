@@ -10,10 +10,9 @@ def run runner
   begin
     begin
       @passed = nil
-      self.before_setup
       self.setup
-      self.after_setup
-      self.run_test self.__name__
+      self.run_setup_hooks
+      self.__send__ self.__name__
       mocha_verify(assertion_counter)
       result = "." unless io?
       @passed = true
@@ -21,16 +20,15 @@ def run runner
       raise
     rescue Exception => e
       @passed = false
-      result = runner.puke self.class, self.__name__, Mocha::Integration::MiniTest.translate(e)
+      result = runner.puke self.class, self.__name__, Mocha::MonkeyPatching::MiniTest.translate(e)
     ensure
-      %w{ before_teardown teardown after_teardown }.each do |hook|
-        begin
-          self.send hook
-        rescue *::MiniTest::Unit::TestCase::PASSTHROUGH_EXCEPTIONS
-          raise
-        rescue Exception => e
-          result = runner.puke self.class, self.__name__, Mocha::Integration::MiniTest.translate(e)
-        end
+      begin
+        self.run_teardown_hooks
+        self.teardown
+      rescue *::MiniTest::Unit::TestCase::PASSTHROUGH_EXCEPTIONS
+        raise
+      rescue Exception => e
+        result = runner.puke self.class, self.__name__, Mocha::MonkeyPatching::MiniTest.translate(e)
       end
       trap 'INFO', 'DEFAULT' if ::MiniTest::Unit::TestCase::SUPPORTS_INFO_SIGNAL
     end
