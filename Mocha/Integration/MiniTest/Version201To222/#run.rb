@@ -19,14 +19,14 @@ def run runner
       raise
     rescue Exception => e
       @passed = false
-      result = runner.puke self.class, self.__name__, Mocha::MonkeyPatching::MiniTest.translate(e)
+      result = runner.puke self.class, self.__name__, Mocha::Integration::MiniTest.translate(e)
     ensure
       begin
         self.teardown
       rescue *::MiniTest::Unit::TestCase::PASSTHROUGH_EXCEPTIONS
         raise
       rescue Exception => e
-        result = runner.puke self.class, self.__name__, Mocha::MonkeyPatching::MiniTest.translate(e)
+        result = runner.puke self.class, self.__name__, Mocha::Integration::MiniTest.translate(e)
       end
       trap 'INFO', 'DEFAULT' if ::MiniTest::Unit::TestCase::SUPPORTS_INFO_SIGNAL
     end
