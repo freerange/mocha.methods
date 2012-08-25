@@ -17,6 +17,8 @@ def run(result)
     ensure
       begin
         teardown
+      rescue Mocha::ExpectationError => e
+        add_failure(e.message, e.backtrace)
       rescue Test::Unit::AssertionFailedError => e
         add_failure(e.message, e.backtrace)
       rescue Exception

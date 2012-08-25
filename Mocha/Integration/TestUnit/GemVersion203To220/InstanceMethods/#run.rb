@@ -16,6 +16,8 @@ def run(result)
       ensure
         begin
           run_teardown
+        rescue Mocha::ExpectationError => e
+          add_failure(e.message, e.backtrace)
         rescue Exception
           raise unless handle_exception($!)
         end
