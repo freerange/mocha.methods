@@ -1,5 +1,5 @@
 def self.included(mod)
-  mod.setup :mocha_setup
+  mod.setup :mocha_setup, :before => :prepend
 
   mod.exception_handler(:handle_mocha_expectation_error)
 
