@@ -1,5 +1,5 @@
 def run(result)
-  assertion_counter = AssertionCounter.new(result)
+  assertion_counter = AssertionCounter.new(self)
   begin
     @_result = result
     yield(Test::Unit::TestCase::STARTED, name)

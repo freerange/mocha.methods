@@ -4,7 +4,7 @@ def self.included(mod)
   mod.exception_handler(:handle_mocha_expectation_error)
 
   mod.cleanup :after => :append do
-    assertion_counter = AssertionCounter.new(self)
+    assertion_counter = Integration::AssertionCounter.new(self)
     mocha_verify(assertion_counter)
   end
 

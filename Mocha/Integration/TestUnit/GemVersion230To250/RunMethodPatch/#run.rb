@@ -1,5 +1,5 @@
 def run(result)
-  assertion_counter = AssertionCounter.new(result)
+  assertion_counter = AssertionCounter.new(self)
   begin
     @internal_data.test_started
     @_result = result
