@@ -1,4 +1,6 @@
 def self.activate
+  return false unless defined?(::MiniTest::Unit::TestCase)
+
   mini_test_version = begin
     Gem::Version.new(::MiniTest::Unit::VERSION)
   rescue LoadError
