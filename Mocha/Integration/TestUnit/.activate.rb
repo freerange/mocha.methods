@@ -10,8 +10,8 @@ def self.activate
 
   ruby_version = Gem::Version.new(RUBY_VERSION.dup)
 
-  debug_puts "Detected Ruby version: #{ruby_version}"
-  debug_puts "Detected Test::Unit version: #{test_unit_version}"
+  Debug.puts "Detected Ruby version: #{ruby_version}"
+  Debug.puts "Detected Test::Unit version: #{test_unit_version}"
 
   integration_module = [
     TestUnit::Adapter,
@@ -25,7 +25,7 @@ def self.activate
   ].detect { |m| m.applicable_to?(test_unit_version, ruby_version) }
 
   unless ::Test::Unit::TestCase < integration_module
-    debug_puts "Applying #{integration_module.description}"
+    Debug.puts "Applying #{integration_module.description}"
     ::Test::Unit::TestCase.send(:include, integration_module)
   end
   true
