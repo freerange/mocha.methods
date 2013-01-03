@@ -8,6 +8,8 @@ def restore_original_method
     else
       stubbee.__metaclass__.send(:define_method, method, @original_method)
     end
+  end
+  if @original_visibility
     stubbee.__metaclass__.send(@original_visibility, method)
   end
 end
