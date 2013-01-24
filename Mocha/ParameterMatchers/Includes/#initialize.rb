@@ -1,3 +1,3 @@
-def initialize(item)
-  @item = item
+def initialize(*items)
+  @items = items
 end

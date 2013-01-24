@@ -1,3 +1,3 @@
-def includes(item)
-  Includes.new(item)
+def includes(*items)
+  Includes.new(*items)
 end
