@@ -1,4 +1,4 @@
 def mocha_inspect
-  repr = @items.map(&:mocha_inspect).join(', ')
-  "includes(#{repr})"
+  item_descriptions = @items.map(&:mocha_inspect)
+  "includes(#{item_descriptions.join(', ')})"
 end
