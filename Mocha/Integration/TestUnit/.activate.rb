@@ -2,7 +2,7 @@ def self.activate
   return false unless defined?(::Test::Unit::TestCase) && !(defined?(::MiniTest::Unit::TestCase) && (::Test::Unit::TestCase < ::MiniTest::Unit::TestCase))
 
   test_unit_version = begin
-    load 'test/unit/version.rb'
+    require 'test/unit/version'
     Gem::Version.new(::Test::Unit::VERSION)
   rescue LoadError
     Gem::Version.new('1.0.0')
