@@ -1,4 +1,4 @@
 def mocha_teardown
-  Mockery.instance.teardown
+  Mockery.teardown
   Mockery.reset_instance
 end
