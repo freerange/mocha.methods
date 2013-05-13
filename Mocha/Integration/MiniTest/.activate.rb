@@ -23,12 +23,7 @@ def self.activate
     MiniTest::Nothing
   ].detect { |m| m.applicable_to?(mini_test_version) }
 
-  target = if defined? Minitest::Test then
-             ::Minitest::Test
-           else
-             ::MiniTest::Unit::TestCase
-           end
-
+  target = defined?(Minitest::Test) ? ::Minitest::Test : ::MiniTest::Unit::TestCase
   unless target < integration_module
     Debug.puts "Applying #{integration_module.description}"
     target.send(:include, integration_module)
