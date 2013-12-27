@@ -1,6 +1,6 @@
 def self.activate
-  return false unless MiniTest.testcase
-  mini_test_version = Gem::Version.new(MiniTest.version)
+  return false unless Detection::MiniTest.testcase
+  mini_test_version = Gem::Version.new(Detection::MiniTest.version)
 
   Debug.puts "Detected MiniTest version: #{mini_test_version}"
 
@@ -18,7 +18,7 @@ def self.activate
     MiniTest::Nothing
   ].detect { |m| m.applicable_to?(mini_test_version) }
 
-  target = MiniTest.testcase
+  target = Detection::MiniTest.testcase
   unless target < integration_module
     Debug.puts "Applying #{integration_module.description}"
     target.send(:include, integration_module)
