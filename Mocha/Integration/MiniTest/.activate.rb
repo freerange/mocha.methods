@@ -1,11 +1,7 @@
 def self.activate
   return false unless defined?(::MiniTest::Unit::TestCase)
 
-  mini_test_version = begin
-    Gem::Version.new(::MiniTest::Unit::VERSION)
-  rescue LoadError
-    Gem::Version.new('0.0.0')
-  end
+  mini_test_version = Gem::Version.new(::MiniTest::Unit::VERSION)
 
   Debug.puts "Detected MiniTest version: #{mini_test_version}"
 
