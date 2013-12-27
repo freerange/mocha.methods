@@ -24,4 +24,5 @@ def self.activate
     Debug.puts "Applying #{integration_module.description}"
     target.send(:include, integration_module)
   end
+  true
 end
