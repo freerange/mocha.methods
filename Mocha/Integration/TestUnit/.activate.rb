@@ -1,6 +1,13 @@
 def self.activate
-  return false unless Detection::TestUnit.testcase
-  test_unit_version = Gem::Version.new(Detection::TestUnit.version)
+  return false unless defined?(::Test::Unit::TestCase) && !(defined?(::MiniTest::Unit::TestCase) && (::Test::Unit::TestCase < ::MiniTest::Unit::TestCase)) && !(defined?(::MiniTest::Spec) && (::Test::Unit::TestCase < ::MiniTest::Spec))
+
+  test_unit_version = begin
+    require 'test/unit/version'
+    Gem::Version.new(::Test::Unit::VERSION)
+  rescue LoadError
+    Gem::Version.new('1.0.0')
+  end
+
   ruby_version = Gem::Version.new(RUBY_VERSION.dup)
 
   Debug.puts "Detected Ruby version: #{ruby_version}"
