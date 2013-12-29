@@ -6,9 +6,14 @@ def method_missing(symbol, *arguments, &block)
     matching_expectation_allowing_invocation.invoke(&block)
   else
     if (matching_expectation = @expectations.match(symbol, *arguments)) || (!matching_expectation && !@everything_stubbed)
-      matching_expectation.invoke(&block) if matching_expectation
-      message = UnexpectedInvocation.new(self, symbol, *arguments).to_s
-      message << @mockery.mocha_inspect
+      if @unexpected_invocation.nil?
+        @unexpected_invocation = UnexpectedInvocation.new(self, symbol, *arguments)
+        matching_expectation.invoke(&block) if matching_expectation
+        message = @unexpected_invocation.full_description
+        message << @mockery.mocha_inspect
+      else
+        message = @unexpected_invocation.short_description
+      end
       raise ExpectationErrorFactory.build(message, caller)
     end
   end

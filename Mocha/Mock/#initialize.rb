@@ -4,5 +4,6 @@ def initialize(mockery, name = nil, &block)
   @expectations = ExpectationList.new
   @everything_stubbed = false
   @responder = nil
+  @unexpected_invocation = nil
   instance_eval(&block) if block
 end
