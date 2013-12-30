@@ -1,0 +1,3 @@
+def mocks
+  [@mock]
+end
